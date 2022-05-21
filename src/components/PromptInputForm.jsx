@@ -1,43 +1,13 @@
 import React from "react";
-import { Configuration, OpenAIApi } from "openai";
 
-const configuration = new Configuration({
-  apiKey: process.env.REACT_APP_API_KEY,
-});
-console.log(configuration);
-const openai = new OpenAIApi(configuration);
-
-export default function PromptInputForm({ prompt, setPrompt, results, setResults }) {
-
-  async function requestOpenAI(prompt, engineId) {
-    const completion = await openai.createCompletion(engineId, {
-      'prompt': prompt,
-      'temperature': 0.9,
-      'max_tokens': 160,
-    });
-    return completion.data.choices[0].text;
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-
-    const engineId = 'text-davinci-002';
-
-    const result = await requestOpenAI(prompt, engineId);
-
-    setResults( prev => [...prev, result]);
-
-
-
-  }
+export default function PromptInputForm({ prompt, setPrompt, handleSubmit }) {
 
   return (
-    <div>
-      <form className="flex items-center" onSubmit={handleSubmit}>
+    <div className="h-1/6 content-center">
+      <form className="flex w-5/6 mb-2 mt-12 m-auto" onSubmit={handleSubmit}>
         <input
           type="text"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg h-20 focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
           placeholder="Chat with me..."
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
@@ -46,17 +16,9 @@ export default function PromptInputForm({ prompt, setPrompt, results, setResults
 
         <button
           type="submit"
-          className="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="inline-flex items-center py-2.5 px-3 ml-6 font-bold text-xl bg-gradient-to-r from-blue-400 to-green-500  rounded-lg border h-20 border-purple-700 hover:from-pink-600 hover:to-yellow-600 hover:shadow-lg focus:ring-4 focus:outline-none focus:ring-purple-300 focus:shadow-xl dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 "
         >
-          <svg
-            className="mr-2 -ml-1 w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-          </svg>
-          Search
+          Submit
         </button>
       </form>
     </div>

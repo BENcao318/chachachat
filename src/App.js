@@ -1,28 +1,28 @@
-import { useState } from 'react';
 import PromptInputForm from './components/PromptInputForm';
+import { useApplicationData } from './hooks/useApplicationData';
+import Home from './pages/Home';
+
+
 
 function App() {
-  const [prompt, setPrompt] = useState('');
-  const [results, setResults] = useState([]);
+  const { prompt, setPrompt, answers, setAnswers, handleSubmit } = useApplicationData();
 
   return (
-    <>
-      <div className=''>
-        <PromptInputForm prompt={prompt} setPrompt={setPrompt} results={results} setResults={setResults}/>
-      </div>
-      <div>
-        {
-          results.map((result, index) => {
+    <div className='overflow-hidden'>
+      <Home />
+      {/* <div> */}
+        {/* {
+          answers.map((answer, index) => {
             return (
               <div key={index}>
-                {result}
+                {answer}
               </div>
             )
           })
-        }
+        } */}
 
-      </div>
-    </>
+      {/* </div> */}
+    </ div>
   );
 }
 
