@@ -6,16 +6,16 @@ Visit the app on Heroku: https://chachachat-318.herokuapp.com/
 
 ## Technical requirements
 The app was created for Shopify's Front End Developer Intern Challenge (Fall 2022). 
-- Results should come from OpenAI’s completions API.
-- Each result should include at least the original prompt you entered and the response from the API.
-- Responses should be stored in order of newest to oldest.
-- The HTML that ends up being served client-side should be accessible and semantic 
+✅ - Results should come from OpenAI’s completions API.
+✅ - Each result should include at least the original prompt you entered and the response from the API.
+✅ - Responses should be stored in order of newest to oldest.
+✅ - The HTML that ends up being served client-side should be accessible and semantic 
 
 ## Extras
-- Save responses if the user leaves or reloads the page
-- Let the user choose the AI engine from a select box
-- Add some presets for the user to quickly send a good prompt
-- Make the app more specific to a single purpose. See the OpenAI Examples and prompt design docs for inspiration.
+✅ - Save responses if the user leaves or reloads the page. Conversation histories are saved in localstorage.
+✅ - Let the user choose the AI engine from a select box
+✅ - Add some presets for the user to quickly send a good prompt
+✅ - Make the app more specific to a single purpose. See the OpenAI Examples and prompt design docs for inspiration.
 
 ## Tech Stack
 - React 
@@ -32,6 +32,18 @@ The app was created for Shopify's Front End Developer Intern Challenge (Fall 202
 - react-scripts
 - uuid
 - tailwindcss
+
+## Setups
+```
+$ git clone git@github.com:BENcao318/chachachat.git chachachat
+$ npm install @slack/web-api @slack/socket-mode
+```
+- create a .env file in root level with your own OPENAI API key 
+```
+$ npm start
+```
+- use the browser to access http://localhost:3000 
+
 
 ## Screenshots
 
