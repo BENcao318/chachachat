@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { ReactComponent as ChatIcon } from '../assets/chat.svg';
 
 export default function Header({ showSidebar, setShowSidebar }) {
   return (
-    <div className='flex lg:hidden  fixed z-20 bg-gray-200 w-full h-1/8 space-x-24'>
+    <div className='flex lg:hidden  fixed z-20 bg-gray-200 w-full h-1/8 space-x-12'>
       <button
         className="p-1 ml-6 rounded-md focus:outline-none focus:shadow-outline-purple hover:text-gray-400"
         aria-label="Menu"
@@ -19,7 +20,8 @@ export default function Header({ showSidebar, setShowSidebar }) {
           ></path>
         </svg>
       </button>
-      <span className='text-4xl self-center text-lime-600 font-bold'>
+      <span className='text-3xl self-center text-lime-600 font-bold'>
+        <ChatIcon className='w-8 inline mr-6'/>
         ChaChaChat
       </span>
       <span>
