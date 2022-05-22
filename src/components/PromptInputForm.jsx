@@ -7,7 +7,7 @@ export default function PromptInputForm({ prompt, setPrompt, handleSubmit, disab
       <form className="flex w-full lg:w-5/6 mb-2 mt-12 m-auto" onSubmit={handleSubmit}>
         <input
           type="text"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg h-20 focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg h-20 focus:ring-lime-500 focus:border-lime-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-lime-500 dark:focus:border-lime-500"
           placeholder="Chat with me..."
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
@@ -17,7 +17,7 @@ export default function PromptInputForm({ prompt, setPrompt, handleSubmit, disab
 
         <button
           type="submit"
-          className="inline-flex items-center py-2.5 px-3 ml-6 font-bold text-xl bg-gradient-to-r from-blue-400 to-green-500  rounded-lg border h-20 border-purple-700 hover:from-pink-600 hover:to-yellow-600 hover:shadow-lg focus:ring-4 focus:outline-none focus:ring-purple-300 focus:shadow-xl dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 "
+          className="inline-flex items-center py-2.5 px-3 ml-6 font-bold text-xl bg-gradient-to-r from-blue-400 to-green-500  rounded-lg border h-20 border-lime-700 hover:from-pink-600 hover:to-yellow-600 hover:shadow-lg hover:-translate-y-1 focus:ring-4 focus:outline-none focus:ring-lime-300 focus:shadow-xl dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800 transition ease-in-out"
           disabled={disableInput}
         >
           Submit

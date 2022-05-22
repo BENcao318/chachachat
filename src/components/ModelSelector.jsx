@@ -21,7 +21,7 @@ export default function ModelSelector({ engine, setEngine }) {
           aria-haspopup="true"
         >
           <span className="inline-flex  mx-auto">
-            <div className='flex-col  md:space-x-6 lg:space-x-12  justify-between'>
+            <div className='flex-col  md:space-x-6 lg:space-x-12  justify-between align'>
               <div className='inline-flex'>
                 <FaConnectdevelop size={30} />
                 <span className="ml-4">Choose a model</span>
@@ -40,9 +40,7 @@ export default function ModelSelector({ engine, setEngine }) {
             viewBox="0 0 20 20"
           >
             <path
-              // fill-rule="evenodd"
               d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            // clip-rule="evenodd"
             ></path>
           </svg>
         </button>

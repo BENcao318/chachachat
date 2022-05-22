@@ -24,8 +24,6 @@ export function useApplicationData() {
     return completion;
   }
 
-  
-
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -37,10 +35,22 @@ export function useApplicationData() {
 
     const result = await requestOpenAI(prompt, engine);
     answer = {...answer, prompt: prompt, response:result.data.choices[0].text, postedOn: new Date().toUTCString(), engine, isSaved: false, isLoading: false };
+    const newConversation = [question, answer];
 
     setPrompt('');
     setDisableInput(false);
     setConversations( prev => [...prev.slice(0, prev.length - 1), answer]);
+
+    if (localStorage.conversations) {   
+      let conversationsArr = JSON.parse(localStorage.conversations);
+      console.log(conversationsArr);
+      conversationsArr.unshift(...newConversation) 
+      console.log(conversationsArr);
+      localStorage.setItem('conversations', JSON.stringify(conversationsArr));     
+    } else {
+      let conversationsArr = newConversation;
+      localStorage.setItem('conversations', JSON.stringify(conversationsArr));
+    }  
     
   }
 
