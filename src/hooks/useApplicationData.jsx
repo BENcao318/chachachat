@@ -26,7 +26,7 @@ export function useApplicationData() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(process.env.REACT_APP_API_KEY);
+
     const question = {id: uuidv4(), prompt: prompt, postedOn: new Date().toUTCString()};
     let answer = {id: uuidv4(), response:'', isLoading: true };
     setConversations(prev => [ ...prev, question ]);
