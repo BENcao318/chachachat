@@ -1,11 +1,7 @@
-import PromptInputForm from './components/PromptInputForm';
-import { useApplicationData } from './hooks/useApplicationData';
 import Home from './pages/Home';
 
 
-
 function App() {
-  const { prompt, setPrompt, answers, setAnswers, handleSubmit } = useApplicationData();
 
   return (
     <div className='overflow-hidden'>

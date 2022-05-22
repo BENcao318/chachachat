@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PromptInputForm({ prompt, setPrompt, handleSubmit }) {
+export default function PromptInputForm({ prompt, setPrompt, handleSubmit, disableInput }) {
 
   return (
     <div className="h-1/6 content-center">
@@ -12,11 +12,13 @@ export default function PromptInputForm({ prompt, setPrompt, handleSubmit }) {
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           required
+          disabled={disableInput}
         />
 
         <button
           type="submit"
           className="inline-flex items-center py-2.5 px-3 ml-6 font-bold text-xl bg-gradient-to-r from-blue-400 to-green-500  rounded-lg border h-20 border-purple-700 hover:from-pink-600 hover:to-yellow-600 hover:shadow-lg focus:ring-4 focus:outline-none focus:ring-purple-300 focus:shadow-xl dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 "
+          disabled={disableInput}
         >
           Submit
         </button>
