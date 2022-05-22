@@ -4,18 +4,18 @@ This project uses OpenAI API to create a chat interface allows the users to inte
 
 Visit the app on Heroku: https://chachachat-318.herokuapp.com/
 
-## Technical requirements
+## Technical requirements 
 The app was created for Shopify's Front End Developer Intern Challenge (Fall 2022). 
-✅ - Results should come from OpenAI’s completions API.
-✅ - Each result should include at least the original prompt you entered and the response from the API.
-✅ - Responses should be stored in order of newest to oldest.
-✅ - The HTML that ends up being served client-side should be accessible and semantic 
+- Results should come from OpenAI’s completions API. ✅ 
+- Each result should include at least the original prompt you entered and the response from the API. ✅ 
+- Responses should be stored in order of newest to oldest. ✅ 
+- The HTML that ends up being served client-side should be accessible and semantic. ✅ 
 
 ## Extras
-✅ - Save responses if the user leaves or reloads the page. Conversation histories are saved in localstorage.
-✅ - Let the user choose the AI engine from a select box
-✅ - Add some presets for the user to quickly send a good prompt
-✅ - Make the app more specific to a single purpose. See the OpenAI Examples and prompt design docs for inspiration.
+- Save responses if the user leaves or reloads the page. Conversation histories are saved in localstorage. ✅ 
+- Let the user choose the AI engine from a select box. ✅ 
+- Add some presets for the user to quickly send a good prompt. ✅ 
+- Make the app more specific to a single purpose. See the OpenAI Examples and prompt design docs for inspiration. ✅ 
 
 ## Tech Stack
 - React 
