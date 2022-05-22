@@ -3,7 +3,7 @@ import { Configuration, OpenAIApi } from "openai";
 import { v4 as uuidv4 } from 'uuid';
 
 const configuration = new Configuration({
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: process.env.API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
