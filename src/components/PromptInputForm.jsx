@@ -7,7 +7,7 @@ export default function PromptInputForm({ prompt, setPrompt, handleSubmit, disab
       <form className="flex w-full lg:w-5/6 mb-2 mt-12 m-auto" onSubmit={handleSubmit}>
         <input
           type="text"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg h-20 focus:ring-lime-500 focus:border-lime-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-lime-500 dark:focus:border-lime-500"
+          className="bg-white border border-gray-300 text-gray-900 lg:text-2xl text-xl font-medium rounded-2xl h-16 focus:ring-offset-6 focus:ring-6 ring-lime-600 focus:border-lime-500 block w-full pl-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-lime-500 dark:focus:border-lime-500"
           placeholder="Chat with me..."
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
@@ -15,12 +15,15 @@ export default function PromptInputForm({ prompt, setPrompt, handleSubmit, disab
           disabled={disableInput}
         />
 
-        <button
-          type="submit"
-          className="inline-flex items-center py-2.5 px-3 ml-6 font-bold text-xl bg-gradient-to-r from-blue-400 to-green-500  rounded-lg border h-20 border-lime-700 hover:from-pink-600 hover:to-yellow-600 hover:shadow-lg hover:-translate-y-1 focus:ring-4 focus:outline-none focus:ring-lime-300 focus:shadow-xl dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800 transition ease-in-out"
-          disabled={disableInput}
-        >
-          Submit
+        <button class="relative ml-2 inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded-2xl hover:pl-10 hover:pr-6 bg-gray-50 group">
+          <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-emerald-600 group-hover:h-full"></span>
+          <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
+          <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </span>
+          <span class="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
+          <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </span>
+          <span class="relative -translate-x-2 w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white text-2xl">Submit</span>
         </button>
       </form>
     </div>

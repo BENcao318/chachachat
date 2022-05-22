@@ -22,8 +22,8 @@ export default function ChatArea({ conversations, isLoading }) {
       <div className="flex overflow-y-auto h-full items-end">
         <ul className="space-y-6 w-5/6 mx-auto max-h-full ">
           {chatList}
-        </ul>
         <div ref={messagesEndRef} /> 
+        </ul>
       </div>
     </>
   )

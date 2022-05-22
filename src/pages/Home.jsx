@@ -55,8 +55,7 @@ export default function Home() {
         </section>
 
         {showModal ? 
-          (  <Modal setShowModal={setShowModal} />
-          ) : null
+          (  <Modal setShowModal={setShowModal} /> ) : null
         }
         
 
