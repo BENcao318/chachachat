@@ -35,10 +35,8 @@ The app was created for Shopify's Front End Developer Intern Challenge (Fall 202
 
 ## Screenshots
 
-<details>
-  <summary> Home Page </summary>
+   Home Page 
   ![Home_Screen_ChaChaChat](https://user-images.githubusercontent.com/60834562/169716166-d456959d-1944-4a72-9125-2fbbd24724b8.png)
- </details>
 
 <details>
   <summary> Choosing an AI engine </summary>
