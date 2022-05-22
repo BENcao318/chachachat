@@ -10,7 +10,7 @@ export default function Sidebar({ engine, setEngine }) {
 
   return (
     <aside
-      className="z-20 hidden items-center h-screen w-full overflow-y-auto bg-white dark:bg-gray-800 lg:block flex-shrink-0"
+      className="z-20 hidden items-center h-screen w-full overflow-y-auto bg-white dark:bg-gray-800 lg:block lg:w-full flex-shrink-0"
     >
       <div className="py-4 text-gray-500 dark:text-gray-400 ">
         <div className="text-center ">

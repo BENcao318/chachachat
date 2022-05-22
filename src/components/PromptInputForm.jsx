@@ -4,7 +4,7 @@ export default function PromptInputForm({ prompt, setPrompt, handleSubmit, disab
 
   return (
     <div className="h-1/6 content-center">
-      <form className="flex w-5/6 mb-2 mt-12 m-auto" onSubmit={handleSubmit}>
+      <form className="flex w-full lg:w-5/6 mb-2 mt-12 m-auto" onSubmit={handleSubmit}>
         <input
           type="text"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg h-20 focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"

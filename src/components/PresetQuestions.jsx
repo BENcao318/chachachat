@@ -11,7 +11,7 @@ const questions = [
 ]
 
 export default function PresetQuestions() {
-  const presetQuestions = questions.map(question => <PresetQuestion question={question} />)
+  const presetQuestions = questions.map((question, index) => <PresetQuestion key={index} question={question} />)
 
   return (
     <div className='grid gap-4 grid-cols-2 grid-rows-3'>

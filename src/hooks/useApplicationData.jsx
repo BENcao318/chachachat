@@ -37,7 +37,7 @@ export function useApplicationData() {
 
     const result = await requestOpenAI(prompt, engine);
     answer = {...answer, prompt: prompt, response:result.data.choices[0].text, postedOn: new Date().toUTCString(), engine, isSaved: false, isLoading: false };
-    console.log(result.data);
+
     setPrompt('');
     setDisableInput(false);
     setConversations( prev => [...prev.slice(0, prev.length - 1), answer]);

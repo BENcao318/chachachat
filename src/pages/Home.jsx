@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <div className='flex gap-4 h-screen bg-gray-200 dark:bg-gray-900'>
-        <section className='md:w-1/5'>
+        <section className='lg:w-1/3'>
           <Sidebar engine={engine} setEngine={setEngine}/>
         </section>
         <section className = 'md:w-4/5'>
