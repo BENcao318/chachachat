@@ -3,7 +3,7 @@ import { Configuration, OpenAIApi } from "openai";
 import { v4 as uuidv4 } from 'uuid';
 
 const configuration = new Configuration({
-  apiKey: process.env.API_KEY,
+  apiKey: process.env.REACT_APP_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
@@ -26,7 +26,7 @@ export function useApplicationData() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
+    console.log(process.env.REACT_APP_API_KEY);
     const question = {id: uuidv4(), prompt: prompt, postedOn: new Date().toUTCString()};
     let answer = {id: uuidv4(), response:'', isLoading: true };
     setConversations(prev => [ ...prev, question ]);
@@ -43,9 +43,8 @@ export function useApplicationData() {
 
     if (localStorage.conversations) {   
       let conversationsArr = JSON.parse(localStorage.conversations);
-      console.log(conversationsArr);
-      conversationsArr.unshift(...newConversation) 
-      console.log(conversationsArr);
+      conversationsArr.unshift(...newConversation);
+
       localStorage.setItem('conversations', JSON.stringify(conversationsArr));     
     } else {
       let conversationsArr = newConversation;
