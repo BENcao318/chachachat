@@ -78,4 +78,4 @@ $ npm start
   <summary> Small Screen page with sliding sidebar </summary>
   ![Small_Screen_Sidebar_ChaChaChat](https://user-images.githubusercontent.com/60834562/169716530-ecdf6bf5-c155-4fc5-a9b3-1b1b40d7be7c.png)
  </details>
->>>>>>> 0e6a956586d22860fb5529a9615589e56a84d2a3
+
