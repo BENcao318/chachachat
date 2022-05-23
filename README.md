@@ -33,7 +33,6 @@ The app was created for Shopify's Front End Developer Intern Challenge (Fall 202
 - uuid
 - tailwindcss
 
-<<<<<<< HEAD
 ## Screenshots
 
 ![](https://github.com/BENcao318/chachachat/blob/master/.github/images/Home_Screen_ChaChaChat.png)
