@@ -22,7 +22,7 @@ export default function Home() {
     return () => {
       document.removeEventListener("resize", handleResize);
     };
-  })
+  }, [setShowSidebar])
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -34,14 +34,14 @@ export default function Home() {
     return () => {
       document.removeEventListener('click', handleClickOutside, true);
     };
-  })
+  }, [ref, setShowSidebar])
 
   useEffect(() => {
     if(localStorage.conversations) {
       const conversationsArr = JSON.parse(localStorage.conversations);
       setConversations(conversationsArr);
     }
-  },[])
+  },[setConversations])
 
   return (
     <>
@@ -57,9 +57,9 @@ export default function Home() {
         {showModal ? 
           (  <Modal setShowModal={setShowModal} /> ) : null
         }
-        
-
       </div>
     </>
   )
 }
+
+

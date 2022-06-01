@@ -12,10 +12,10 @@ export default function ChatArea({ conversations, isLoading }) {
 
   useEffect(() => {
     scrollToBottom()
-  })
+  }, [conversations, isLoading])
 
   const chatList = conversations.map(conversation => {
-    return conversation.hasOwnProperty('response') ? <Answer key={conversation.id} conversation={conversation} isLoading={isLoading} /> : <Question key={conversation.id} conversation={conversation} />
+    return conversation['response'] !== undefined ? <Answer key={conversation.id} conversation={conversation} isLoading={isLoading} /> : <Question key={conversation.id} conversation={conversation} />
   })
   return (
     <>
