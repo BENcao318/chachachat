@@ -27,30 +27,30 @@ export function useApplicationData() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const question = {id: uuidv4(), prompt: prompt, postedOn: new Date().toUTCString()};
-    let answer = {id: uuidv4(), response:'', isLoading: true };
-    setConversations(prev => [ ...prev, question ]);
-    setConversations(prev => [ ...prev, answer ]);
+    const question = { id: uuidv4(), prompt: prompt, postedOn: new Date().toUTCString() };
+    let answer = { id: uuidv4(), response: '', isLoading: true };
+    setConversations(prev => [...prev, question]);
+    setConversations(prev => [...prev, answer]);
     setDisableInput(true);
 
     const result = await requestOpenAI(prompt, engine);
-    answer = {...answer, prompt: prompt, response:result.data.choices[0].text, postedOn: new Date().toUTCString(), engine, isSaved: false, isLoading: false };
+    answer = { ...answer, prompt: prompt, response: result.data.choices[0].text, postedOn: new Date().toUTCString(), engine, isSaved: false, isLoading: false };
     const newConversation = [question, answer];
 
     setPrompt('');
     setDisableInput(false);
-    setConversations( prev => [...prev.slice(0, prev.length - 1), answer]);
+    setConversations(prev => [...prev.slice(0, prev.length - 1), answer]);
 
-    if (localStorage.conversations) {   
+    if (localStorage.conversations) {
       let conversationsArr = JSON.parse(localStorage.conversations);
       conversationsArr.unshift(...newConversation);
 
-      localStorage.setItem('conversations', JSON.stringify(conversationsArr));     
+      localStorage.setItem('conversations', JSON.stringify(conversationsArr));
     } else {
       let conversationsArr = newConversation;
       localStorage.setItem('conversations', JSON.stringify(conversationsArr));
-    }  
-    
+    }
+
   }
 
   return {

@@ -14,11 +14,11 @@ export default function Home() {
 
   useEffect(() => {
     function handleResize() {
-      if(window.innerWidth > 992){
+      if (window.innerWidth > 992) {
         setShowSidebar(false)
       }
     }
-    window.addEventListener("resize", handleResize );
+    window.addEventListener("resize", handleResize);
     return () => {
       document.removeEventListener("resize", handleResize);
     };
@@ -37,25 +37,25 @@ export default function Home() {
   }, [ref, setShowSidebar])
 
   useEffect(() => {
-    if(localStorage.conversations) {
+    if (localStorage.conversations) {
       const conversationsArr = JSON.parse(localStorage.conversations);
       setConversations(conversationsArr);
     }
-  },[setConversations])
+  }, [setConversations])
 
   return (
     <>
       <div className='flex h-screen bg-gray-200 dark:bg-gray-900'>
         <section className={`z-40 lg:w-1/4 transition ease-in-out duration-300 ${showSidebar ? 'translate-x-0 fixed' : '-translate-x-full lg:translate-x-0 w-0'}`} ref={ref}>
-          <Sidebar engine={engine} setEngine={setEngine} showSidebar={showSidebar} setShowSidebar={setShowSidebar} setPrompt={setPrompt} setShowModal={setShowModal}/>
+          <Sidebar engine={engine} setEngine={setEngine} showSidebar={showSidebar} setShowSidebar={setShowSidebar} setPrompt={setPrompt} setShowModal={setShowModal} />
         </section>
         <section className='lg:w-3/4 w-screen'>
-          <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
+          <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
           <Main prompt={prompt} setPrompt={setPrompt} conversations={conversations} handleSubmit={handleSubmit} disableInput={disableInput} />
         </section>
 
-        {showModal ? 
-          (  <Modal setShowModal={setShowModal} /> ) : null
+        {showModal ?
+          (<Modal setShowModal={setShowModal} />) : null
         }
       </div>
     </>

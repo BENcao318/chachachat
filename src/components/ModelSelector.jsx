@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Transition } from "@headlessui/react";
 import { FaConnectdevelop } from 'react-icons/fa';
 
+// useCallback
 export default function ModelSelector({ engine, setEngine }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   function toggleMenu() {
     setMenuIsOpen(!menuIsOpen);
   }
@@ -23,7 +25,7 @@ export default function ModelSelector({ engine, setEngine }) {
           <span className="inline-flex  mx-auto">
             <div className='flex-col  md:space-x-6 lg:space-x-12  justify-between align'>
               <div className='inline-flex'>
-                <FaConnectdevelop className='font-extrabold text-cyan-600' size={30}/>
+                <FaConnectdevelop className='font-extrabold text-cyan-600' size={30} />
                 <span className="ml-4">Choose a model</span>
               </div>
               <p className="text-sm italic text-orange-600">
