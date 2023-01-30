@@ -23,8 +23,8 @@ export function useApplicationData() {
 
     return completion;
   }
-
-  async function handleSubmit(e) {
+ 
+  async function handleSubmit(e) { 
     e.preventDefault();
 
     const question = { id: uuidv4(), prompt: prompt, postedOn: new Date().toUTCString() };
