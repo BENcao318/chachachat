@@ -13,7 +13,7 @@ export default function Question({ conversation }) {
         </div>
 
         <div className="grid grid-cols-2 gap-3 text-sm lg:grid-cols-1">
-          <p className="text-sm italic text-gray-400 flex justify-end lg:justify-start"> posted on: {conversation.postedOn}</p>
+          <p className="text-sm italic text-gray-400 flex justify-end lg:justify-start"> posted on: {conversation.postedOn}</p> 
         </div>
       </div>
     </li>

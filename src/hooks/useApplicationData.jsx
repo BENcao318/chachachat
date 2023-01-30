@@ -17,14 +17,14 @@ export function useApplicationData() {
   async function requestOpenAI(prompt, engineId) {
     const completion = await openai.createCompletion(engineId, {
       'prompt': prompt,
-      'temperature': 0.6,
+      'temperature': 0.66,
       'max_tokens': 160,
     });
 
     return completion;
   }
-
-  async function handleSubmit(e) {
+ 
+  async function handleSubmit(e) { 
     e.preventDefault();
 
     const question = { id: uuidv4(), prompt: prompt, postedOn: new Date().toUTCString() };
