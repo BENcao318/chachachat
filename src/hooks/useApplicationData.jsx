@@ -17,7 +17,7 @@ export function useApplicationData() {
   async function requestOpenAI(prompt, engineId) {
     const completion = await openai.createCompletion(engineId, {
       'prompt': prompt,
-      'temperature': 0.6,
+      'temperature': 0.66,
       'max_tokens': 160,
     });
 
